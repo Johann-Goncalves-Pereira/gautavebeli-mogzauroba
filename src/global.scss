@@ -7,6 +7,45 @@
 @tailwind utilities;
 
 /* 
+*   My personal style
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	&::first-letter {
+		text-transform: capitalize;
+	}
+}
+
+h1 {
+	margin-block: theme('size.4');
+	font-size: theme('fontSize.5xl');
+	line-height: theme('lineHeight.none');
+	text-align: center;
+}
+
+h2 {
+	margin-block: theme('size.3');
+	font-size: theme('fontSize.3xl');
+	line-height: theme('lineHeight.loose');
+	text-align: center;
+}
+
+p {
+	margin-bottom: 2ex;
+	text-align: start;
+
+	&::first-letter {
+		margin-left: 2ch;
+	}
+}
+
+/* 
 *   Kevin Powell
 *   https://youtu.be/cCAtD_BAHNw 
 */
@@ -30,6 +69,15 @@ html {
 
 body {
 	min-height: 100vh;
+	font-family: 'Platypi', 'Times New Roman', Times, serif;
+	font-optical-sizing: auto;
+
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 /* Media responsive */

@@ -29,10 +29,7 @@ export default component$(() => {
 				)}
 				<RouterHead />
 			</head>
-			<body
-				class='grid h-dvh grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr] gap-2 bg-stone-950'
-				lang='en'
-			>
+			<body class='grid bg-stone-900' lang='en'>
 				<RouterOutlet />
 				{!isDev && <ServiceWorkerRegister />}
 			</body>
