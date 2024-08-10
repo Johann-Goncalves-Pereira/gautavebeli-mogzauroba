@@ -1,11 +1,55 @@
 .main {
+	position: relative;
+
 	grid-area: main;
 
 	margin-inline: auto;
-	outline: 1px dashed red;
-	outline-offset: -2px;
 
-	box-shadow: 0 0 0 100vmax hsl(from var(--color-surface-900) h s l / 0.5);
+	// outline: 1px dashed red;
+	// outline-offset: -2px;
+
 	width: theme('size.read');
 	height: 200vh;
+
+	$bg-color: hsl(from var(--color-surface-900) h s l / 0.25);
+
+	box-shadow: 0 0 0 100vmax var(--color-surface-900);
+	background-color: var(--color-surface-900);
+
+	padding: theme('padding.read');
+
+	$pseudo-width: 1rem;
+
+	&::before,
+	&::after {
+		position: fixed;
+
+		margin-inline: auto;
+
+		inset-block: var(--body__header--height) var(--body__footer--height);
+		inset-inline: 0;
+
+		border-style: dotted;
+		border-color: var(--color-primary-950);
+		border-radius: theme('borderRadius.lg');
+
+		width: $pseudo-width;
+
+		pointer-events: none;
+
+		content: '';
+	}
+
+	&::before {
+		transform: translateX(calc((theme('size.read') + $pseudo-width) / -2));
+
+		border-right-width: 1px;
+	}
+
+	&::after {
+		transform: translateX(calc((theme('size.read') + $pseudo-width) / 2));
+
+		// box-shadow: inset 16px 0 16px -16px var(--color-primary-950);
+		border-left-width: 1px;
+	}
 }

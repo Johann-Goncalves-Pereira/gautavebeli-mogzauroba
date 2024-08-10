@@ -1,4 +1,4 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik'
+import { component$, Slot, useStylesScoped$ } from '@builder.io/qwik'
 import type { RequestHandler } from '@builder.io/qwik-city'
 
 import styles from './layout.scss?inline'
@@ -25,7 +25,9 @@ export default component$(() => {
 		<>
 			<Header />
 			<SideLeft />
-			<main class='main'></main>
+			<main class='main'>
+				<Slot />
+			</main>
 			<SideRight />
 			<Footer />
 		</>

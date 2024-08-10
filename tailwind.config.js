@@ -6,10 +6,10 @@ export default {
 	theme: {
 		extend: {
 			padding: {
-				read: 'clamp(1ch, .5vw + .5rem, 2ch)',
+				read: 'clamp(1ch + .125rem, 1vw + 0.125rem, 2ch + 0.125rem)',
 			},
 			size: {
-				read: 'clamp(42ch, 44vw + 1rem, 72ch)',
+				read: 'clamp(40ch + 1rem, 44vw + 1rem, 70ch + 1rem)',
 			},
 		},
 		boxShadow: {
