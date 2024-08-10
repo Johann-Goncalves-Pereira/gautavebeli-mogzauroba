@@ -1,0 +1,13 @@
+.area-footer {
+	grid-area: footer;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+
+	background-color: var(--color-surface-950);
+	width: 100%;
+
+	height: var(--body__header--height);
+}

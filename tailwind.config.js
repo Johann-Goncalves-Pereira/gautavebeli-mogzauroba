@@ -8,15 +8,12 @@ export default {
 			padding: {
 				read: 'clamp(1ch, .5vw + .5rem, 2ch)',
 			},
-			width: {
-				read: 'clamp(42ch + 1rem, 44vw + 2rem, 72ch + 1rem)',
+			size: {
+				read: 'clamp(42ch, 44vw + 1rem, 72ch)',
 			},
 		},
 		boxShadow: {
-			'hide-black': '0 0 0 100vmax theme("colors.stone.950")',
-		},
-		gridTemplateColumns: {
-			read: 'auto clamp(42ch, 44vw + 1rem, 72ch) auto',
+			'hide-black': '0 0 0 100vmax var(--color-surface-950)',
 		},
 	},
 	plugins: [],

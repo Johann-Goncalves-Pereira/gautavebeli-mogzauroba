@@ -1,0 +1,13 @@
+.area-side--left {
+	grid-area: side--left;
+}
+
+.side--left {
+	position: fixed;
+	top: var(--body__header--height);
+	bottom: var(--body__header--height);
+	left: 0;
+
+	background-color: var(--color-surface-950);
+	width: var(--body__side--left--width);
+}

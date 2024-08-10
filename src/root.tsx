@@ -7,7 +7,7 @@ import {
 import { RouterHead } from './components/router-head/router-head'
 import { isDev } from '@builder.io/qwik/build'
 
-import './global.scss'
+import './styles/_index.scss'
 
 export default component$(() => {
 	/**
@@ -29,7 +29,7 @@ export default component$(() => {
 				)}
 				<RouterHead />
 			</head>
-			<body class='grid bg-stone-900' lang='en'>
+			<body lang='en'>
 				<RouterOutlet />
 				{!isDev && <ServiceWorkerRegister />}
 			</body>

@@ -1,0 +1,12 @@
+.area-header {
+	grid-area: header;
+}
+
+.header {
+	position: fixed;
+
+	background-color: var(--color-surface-950);
+	width: 100%;
+
+	height: var(--body__header--height);
+}
