@@ -11,6 +11,9 @@ devDependencies:
   '@builder.io/qwik-city':
     specifier: ^1.8.0
     version: 1.8.0(@types/node@20.14.11)(sass@1.77.8)
+  '@total-typescript/ts-reset':
+    specifier: ^0.5.1
+    version: 0.5.1
   '@types/eslint':
     specifier: 8.56.10
     version: 8.56.10
@@ -815,6 +818,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@total-typescript/ts-reset@0.5.1:
+    resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
+    dev: true
 
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}

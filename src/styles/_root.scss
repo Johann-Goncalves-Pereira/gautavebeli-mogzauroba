@@ -8,8 +8,12 @@ body {
 	}
 }
 
+html {
+	transition: font-size 200ms ease-out;
+}
+
 body {
-	--body__header--height: 2rem;
+	--body__header--height: 4rem;
 	--body__side--left--width: 2rem;
 	--body__side--right--width: 2rem;
 	--body__footer--height: 2rem;
@@ -69,7 +73,14 @@ body {
 		box-shadow:
 			0 0 0 8rem var(--color-primary-950),
 			inset 0 0 16px 0 var(--color-primary-950),
-			inset 0 0 0 32px var(--color-surface-950);
+			//
+			inset var(--body__side--left--width) 0 0 0 var(--color-surface-950),
+			inset calc(var(--body__side--right--width) * -1) 0 0 0
+				var(--color-surface-950),
+			inset 0 var(--body__header--height) 0 0 var(--color-surface-950),
+			inset 0 calc(var(--body__footer--height) * -1) 0 0
+				var(--color-surface-950);
+
 		border: 1px solid var(--color-primary-950);
 
 		border-radius: theme('borderRadius.lg');

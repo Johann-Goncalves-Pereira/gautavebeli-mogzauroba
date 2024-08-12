@@ -1,13 +1,115 @@
+@use 'sass:math' as *;
+@use '../../../styles/abstract/' as *;
+
 .area-header {
 	grid-area: header;
 	pointer-events: none;
 }
 
-.header {
+.header
+// .config-button,
+// .config-button--show
+{
 	position: fixed;
+}
 
-	background-color: var(--color-surface-950);
-	width: 100%;
+.config-button--hide,
+.config-button--show {
+	grid-area: header;
 
+	transform-origin: center;
+
+	z-index: 20;
+	transition: transform 200ms ease-out;
+
+	margin-inline: auto;
+
+	inset-inline: 0;
 	height: var(--body__header--height);
+}
+
+.config-button {
+	&----hide {
+		width: 100%;
+	}
+
+	&--show {
+		transform: rotateX(180deg);
+		padding-inline: 3rem;
+		width: max-content;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	z-index: 10;
+
+	padding-inline: var(--body__side--left--width) var(--body__side--right--width);
+
+	width: 100%;
+	height: var(--body__header--height);
+}
+
+.scale {
+	$bottom: 0.25rem;
+	$scale-y: 2rem;
+	$scale-y-pow: 1.4;
+	$scale-x: 6rem;
+	$base-x-math: $scale-x * 0.8 * 0.25;
+
+	position: relative;
+	margin-bottom: $bottom;
+	background-color: var(--color-primary-900);
+	width: $scale-x;
+	height: 1px;
+
+	&__ball {
+		$size: 0.75rem;
+		// display: none;
+
+		position: absolute;
+		bottom: $bottom * -1 - 0.0625rem;
+		transform: translateX(
+			calc(
+				$base-x-math * var(--input--font-size_, 1) - #{$size * 0.5 - 0.03125rem}
+			)
+		);
+
+		transition: transform 200ms ease-out;
+		will-change: transform;
+
+		border-radius: theme('borderRadius.full');
+
+		background-color: var(--color-primary-900);
+		background-color: hsl(from var(--color-primary-900) h s l / 0.5);
+
+		width: $size;
+		height: $size;
+	}
+
+	div {
+		&[aria-posinset] {
+			position: absolute;
+			bottom: $bottom * -1;
+			border-left: 1px dotted var(--color-primary-900);
+		}
+
+		&[aria-posinset='1'] {
+			left: $base-x-math;
+			height: div($scale-y, pow($scale-y-pow, 4));
+		}
+		&[aria-posinset='2'] {
+			left: $base-x-math * 2;
+			height: div($scale-y, pow($scale-y-pow, 3));
+		}
+		&[aria-posinset='3'] {
+			left: $base-x-math * 3;
+			height: div($scale-y, pow($scale-y-pow, 2));
+		}
+		&[aria-posinset='4'] {
+			left: $base-x-math * 4;
+			height: div($scale-y, $scale-y-pow);
+		}
+	}
 }
